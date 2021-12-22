@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:first": "ng build my-first-app --output-hashing none && node ./projects/my-first-app/merge-build.js",
+    "build:second": "ng build my-second-app --output-hashing none && node ./projects/my-second-app/merge-build.js"
   },
   "private": true,
   "dependencies": {
@@ -24,10 +26,13 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.1.1",
+    "@angular-extensions/elements": "^13.0.0",
     "@angular/cli": "~13.1.1",
     "@angular/compiler-cli": "~13.1.0",
+    "@angular/elements": "^13.1.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "concat": "^1.0.3",
     "jasmine-core": "~3.10.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
