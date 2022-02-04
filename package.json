@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "@auth0/angular-jwt": "^5.0.2",
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@ng-select/ng-select": "^8.1.1",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
@@ -30,6 +31,7 @@
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.34",
     "ngx-bootstrap": "^8.0.0",
+    "ngx-toastr": "^14.2.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
