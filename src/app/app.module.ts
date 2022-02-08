@@ -4,10 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { ExampleModalComponent } from './components/views/example-modal/example-modal.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExampleModalComponent
   ],
   imports: [
     BrowserModule,

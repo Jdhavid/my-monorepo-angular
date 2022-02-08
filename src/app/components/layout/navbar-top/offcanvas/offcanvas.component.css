@@ -1,3 +1,7 @@
 #offcanvas-toggler {
     display: none;
 }
+
+.offcanvas {
+    background-color: lightblue;
+}
