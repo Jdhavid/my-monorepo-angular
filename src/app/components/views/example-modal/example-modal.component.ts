@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
+import { IExampleModal } from './interfaces/i-example-modal';
 
 @Component({
   selector: 'app-example-modal',
@@ -7,10 +8,10 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./example-modal.component.css']
 })
 export class ExampleModalComponent implements OnInit {
-
-  title?: string;
+  @Input()
+  iExampleModal: Partial<IExampleModal> = {};
   closeBtnName?: string;
-  list: any[] = [];
+
 
   @Output()
   public variableOutput: EventEmitter<string> = new EventEmitter<string>();
