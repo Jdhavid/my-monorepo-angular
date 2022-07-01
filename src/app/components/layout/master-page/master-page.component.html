@@ -1,6 +1,5 @@
-<header>
-    <app-navbar-top (toggle)="onToggeNav($event)"></app-navbar-top>
-</header>
+<app-navbar-top (toggle)="onToggeNav($event)"></app-navbar-top>
+
 
 <section id="container">
     <nav [ngClass]="{'toggle-navbar-left': isCollapsed}">
@@ -10,5 +9,4 @@
     <main>
         <router-outlet></router-outlet>
     </main>
-
 </section>

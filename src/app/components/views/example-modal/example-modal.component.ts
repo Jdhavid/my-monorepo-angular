@@ -9,8 +9,8 @@ import { IExampleModal } from './interfaces/i-example-modal';
 })
 export class ExampleModalComponent implements OnInit {
   @Input()
-  iExampleModal: Partial<IExampleModal> = {};
-  closeBtnName?: string;
+  public exampleModal: Partial<IExampleModal> = {};
+  public closeBtnName?: string;
 
 
   @Output()

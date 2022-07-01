@@ -27,12 +27,11 @@ export class HomeComponent implements OnInit {
     }
     let o = { dic: <{ [name: string]: number }>{ 'a': 1, 'b': 2 } }
     const initialState: ModalOptions = {
-      //initialState: initialStateExample,
       class: 'modal-lg',
       ignoreBackdropClick: true
     };
     this.bsModalRef = this.modalService.show(ExampleModalComponent, initialState);
-    this.bsModalRef.content.iExampleModal = initialStateExample;
+    this.bsModalRef.content.exampleModal = initialStateExample;
     this.bsModalRef.content.closeBtnName = 'Close';
     this.bsModalRef.content.variableOutput.subscribe((valor: String) => { console.log(valor) });
 

@@ -1,4 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+header {
+    background-color: lime;
+    position: fixed;
+    width: 100%;
+    height: 3em;
+}
+
+#container {
+    display: flex;
+    height: 100vh;
+    padding-top: 3em;
+}
+
+nav {
+    background-color: lightblue;
+    transition: .4s;
+    width: 18em;
+}
+
+main {
+    background-color: yellow;
+    padding: 0em .6em .6em .6em;
+    overflow-y: auto;
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     nav {
         margin-left: -18em;
