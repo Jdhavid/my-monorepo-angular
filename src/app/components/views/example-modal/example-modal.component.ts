@@ -12,7 +12,6 @@ export class ExampleModalComponent implements OnInit {
   public exampleModal: Partial<IExampleModal> = {};
   public closeBtnName?: string;
 
-
   @Output()
   public variableOutput: EventEmitter<string> = new EventEmitter<string>();
 

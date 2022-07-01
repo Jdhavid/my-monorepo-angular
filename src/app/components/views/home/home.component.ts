@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { AlertNotificationService } from 'src/app/shared/services/alert-notification/alert-notification.services';
 import { ExampleModalComponent } from '../example-modal/example-modal.component';
 import { IExampleModal } from '../example-modal/interfaces/i-example-modal';
 
@@ -10,12 +13,24 @@ import { IExampleModal } from '../example-modal/interfaces/i-example-modal';
 })
 export class HomeComponent implements OnInit {
   private bsModalRef?: BsModalRef;
-  constructor(private modalService: BsModalService) { }
+  private translateSubscription?: Subscription;
+  constructor(
+    private modalService: BsModalService,
+    private alertNotificationService: AlertNotificationService,
+    private translate: TranslateService,
+  ) { }
 
   ngOnInit(): void {
   }
 
-  openModalWithComponent(): void {
+  async openModalWithComponent(): Promise<void> {
+
+    this.openModal2();
+
+
+  }
+
+  private async openModal1(): Promise<void> {
     const initialStateExample: Partial<IExampleModal> = {
       list: [
         'Open a modal with component',
@@ -34,6 +49,22 @@ export class HomeComponent implements OnInit {
     this.bsModalRef.content.exampleModal = initialStateExample;
     this.bsModalRef.content.closeBtnName = 'Close';
     this.bsModalRef.content.variableOutput.subscribe((valor: String) => { console.log(valor) });
+  }
+
+  private openModal2(): void {
+    let messageTitle: string;
+    this.translateSubscription = this.translate.get('AUTHORIZATION.REVIEW_AUTORIZATION.ID_AUTHORIZATION').subscribe(
+      (result: string) => { messageTitle = result }
+    );
+
+    this.alertNotificationService.showDialog('titulo', 'estamos uno a', true, 'aceptar', 'cancelar');
+
+    this.alertNotificationService.result.subscribe(resul => console.log(resul));
+
+
+    //this.alertNotificationService.result.subscribe(resul => console.log(resul));
 
   }
+
+
 }
