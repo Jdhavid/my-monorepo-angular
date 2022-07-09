@@ -13,7 +13,7 @@ import { AlertNotificationService } from 'src/app/shared/services/alert-notifica
 
 @NgModule({
   declarations: [
-    NavbarTopComponent, NavbarLeftComponent, OffcanvasComponent,
+    NavbarTopComponent, NavbarLeftComponent, OffcanvasComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +25,7 @@ import { AlertNotificationService } from 'src/app/shared/services/alert-notifica
     SharedModule
   ],
   exports: [
-    NavbarTopComponent, NavbarLeftComponent,
+    NavbarTopComponent, NavbarLeftComponent
   ],
   providers: [AlertNotificationService],
 })

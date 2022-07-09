@@ -1,30 +1,30 @@
 import { CommonModule } from "@angular/common";
-import { ModuleWithProviders } from '@angular/compiler/src/core';
-import { NgModule } from "@angular/core";
+import { ModuleWithProviders, NgModule } from "@angular/core";
 import { TranslateModule } from '@ngx-translate/core';
 import { AlertNotificationComponent } from "./services/alert-notification/alert-notification-component/alert-notification.component";
 import { AlertNotificationService } from "./services/alert-notification/alert-notification.services";
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { DatepickerWrapperComponent } from "./components/custom-datepicker-wrapper/datepicker-wrapper";
 
 @NgModule({
     imports: [
         CommonModule,
-        TranslateModule
+        TranslateModule,
+        BsDatepickerModule.forRoot(),
     ],
     declarations: [
-        AlertNotificationComponent
+        AlertNotificationComponent, DatepickerWrapperComponent
     ],
     exports: [
-        AlertNotificationComponent
+        AlertNotificationComponent, DatepickerWrapperComponent
     ],
-    entryComponents: [
-        AlertNotificationComponent
-    ],
-    providers: [AlertNotificationService],
+    providers: [AlertNotificationService]
 })
 export class SharedModule {
-    static forRoot(): ModuleWithProviders {
+
+    static forRoot(): ModuleWithProviders<any> {
         return {
-            ngModule: SharedModule
-        }
+            ngModule: SharedModule,
+        };
     }
 }

@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AlertNotificationService } from 'src/app/shared/services/alert-notification/alert-notification.services';
+import { SharedModule } from 'src/app/shared/shared.mudule';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule, ReactiveFormsModule,
     RouterModule.forChild(routes),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    SharedModule
   ],
   providers: [AlertNotificationService],
 })

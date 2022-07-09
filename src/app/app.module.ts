@@ -23,7 +23,7 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    ExampleModalComponent
+    ExampleModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +38,7 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    SharedModule.forRoot()
+    SharedModule.forRoot(),    
   ],
   providers: [AlertNotificationService],
   bootstrap: [AppComponent]

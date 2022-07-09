@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit {
 
     this.openModal2();
 
-
   }
 
   private async openModal1(): Promise<void> {
